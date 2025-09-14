@@ -275,15 +275,8 @@ The application automatically deletes and recreates the database on each run dur
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Support
-
-For support and questions:
-- Create an issue in the repository
-- Contact the development team
 
 ---
 
