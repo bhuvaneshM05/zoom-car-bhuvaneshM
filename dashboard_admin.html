@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Welcome, Admin {{ session.username }}!</p>
+<ul>
+  <li><a href="{{ url_for('home') }}">Manage Cars</a></li>
+  <li><a href="{{ url_for('rental_history') }}">View All Rentals</a></li>
+  <li><a href="{{ url_for('logout') }}">Logout</a></li>
+</ul>
+{% endblock %}

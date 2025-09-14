@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Make Payment</h2>
+<p>Rental ID: {{ rental.rentalId }} | Amount: ₹{{ rental.rentalFee }}</p>
+<form method="POST">
+  <label>Payment Method:</label>
+  <select name="method" required>
+    <option value="Credit Card">Credit Card</option>
+    <option value="UPI">UPI</option>
+    <option value="Net Banking">Net Banking</option>
+  </select>
+  <br><br>
+  <button type="submit">Pay Now</button>
+</form>
+{% endblock %}

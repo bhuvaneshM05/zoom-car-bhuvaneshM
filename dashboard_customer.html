@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Customer Dashboard</h2>
+<p>Welcome, {{ session.username }}!</p>
+<h3>Your Rental History</h3>
+<ul>
+  {% for rental in rentals %}
+    <li>
+      <strong>{{ rental.carId }}</strong> |
+      From: {{ rental.startDate }} to {{ rental.endDate }} |
+      ₹{{ rental.rentalFee }}
+      <a href="{{ url_for('make_payment', rental_id=rental.rentalId) }}">Pay Now</a>
+    </li>
+  {% else %}
+    <li>No rentals found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

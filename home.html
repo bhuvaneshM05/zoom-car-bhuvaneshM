@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Available Cars</h2>
+<ul>
+  {% for car in cars %}
+    <li>
+      <strong>{{ car.make }} {{ car.model }} ({{ car.year }})</strong><br>
+      {{ car.color }} | {{ car.fuelType }} | ₹{{ car.dailyRate }} per day<br>
+      {% if car.availability %}
+        <a href="{{ url_for('book_car', registrationNumber=car.registrationNumber) }}">Book Now</a>
+      {% else %}
+        <em>Not Available</em> |
+        <a href="{{ url_for('return_car', registrationNumber=car.registrationNumber) }}">Return</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

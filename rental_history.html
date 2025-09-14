@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Rental History</h2>
+<form method="POST">
+  <input name="email" placeholder="Enter your email" required>
+  <button type="submit">Search</button>
+</form>
+
+<ul>
+  {% for rental in rentals %}
+    <li>
+      <strong>{{ rental.carId }}</strong><br>
+      From: {{ rental.startDate }} to {{ rental.endDate }}<br>
+      ₹{{ rental.rentalFee }} | Returned: {{ rental.returned }}<br>
+      <a href="{{ url_for('make_payment', rental_id=rental.rentalId) }}">Pay Now</a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
